@@ -61,14 +61,18 @@ time.sleep(5)
 driver.get("pending_posts_page")
 
 
-time.sleep(5)
-list = driver.find_element(By.XPATH, '//*[@aria-label="More post approval actions"]').click()
-time.sleep(5)
-Decline = driver.find_element(By.XPATH, '(//div[@role="menuitem"])[2]').click()
-time.sleep(5)
-txt = driver.find_element(By.XPATH, '//*[@aria-label="Additional notes from the admins (optional)"]').send_keys(Declinetxt)
-time.sleep(5)
-Confirm = driver.find_element(By.XPATH, '//div[@aria-label="Confirm"]').click()
-time.sleep(5)
+for i in range(50):
+    time.sleep(2)
+    list2 = driver.find_element_by_xpath('//*[@aria-label="More post approval actions"]')
+    driver.execute_script("arguments[0].click();", list2)
+    time.sleep(2)
+    Decline = driver.find_element(By.XPATH, '(//div[@role="menuitem"])[2]').click()
+    time.sleep(2)
+    txt = driver.find_element(By.XPATH, '//*[@aria-label="Additional notes from the admins (optional)"]').send_keys(
+        Declinetxt)
+    time.sleep(2)
+    DeclineConfirm = driver.find_element(By.XPATH, "//span[contains(text(),'Confirm')]").click()
+    time.sleep(2)
+    driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
 
 driver.quit()
