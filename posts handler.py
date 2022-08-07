@@ -71,8 +71,9 @@ for i in range(50):
     txt = driver.find_element(By.XPATH, '//*[@aria-label="Additional notes from the admins (optional)"]').send_keys(
         Declinetxt)
     time.sleep(2)
-    DeclineConfirm = driver.find_element(By.XPATH, "//span[contains(text(),'Confirm')]").click()
-    time.sleep(2)
-    driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
+    DeclineConfirm = driver.find_element_by_xpath ( '/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div[2]/div/div').click()
+    #   time.sleep(2)
+    # driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
+
 
 driver.quit()
