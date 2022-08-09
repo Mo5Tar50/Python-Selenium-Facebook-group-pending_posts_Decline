@@ -75,5 +75,5 @@ try:
             '/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div[2]/div/div').click()
         #   time.sleep(2)
         # driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
- :
+except:
     driver.quit()
