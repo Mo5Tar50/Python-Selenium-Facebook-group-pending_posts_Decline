@@ -1,0 +1,12 @@
+import schedule
+from subprocess import call
+
+
+def auto_run():
+    call(["python", "ur_handler_Path"])
+
+#Specify the time between each run
+schedule.every(3).hours.do(auto_run)
+
+while True:
+    schedule.run_pending()
