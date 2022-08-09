@@ -60,20 +60,20 @@ Declinetxt  = "ur_txt"
 time.sleep(5)
 driver.get("pending_posts_page")
 
-
-for i in range(50):
-    time.sleep(2)
-    list2 = driver.find_element_by_xpath('//*[@aria-label="More post approval actions"]')
-    driver.execute_script("arguments[0].click();", list2)
-    time.sleep(2)
-    Decline = driver.find_element(By.XPATH, '(//div[@role="menuitem"])[2]').click()
-    time.sleep(2)
-    txt = driver.find_element(By.XPATH, '//*[@aria-label="Additional notes from the admins (optional)"]').send_keys(
-        Declinetxt)
-    time.sleep(2)
-    DeclineConfirm = driver.find_element_by_xpath ( '/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div[2]/div/div').click()
-    #   time.sleep(2)
-    # driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
-
-
-driver.quit()
+try:
+    for i in range(100):
+        time.sleep(2)
+        list2 = driver.find_element_by_xpath('//*[@aria-label="More post approval actions"]')
+        driver.execute_script("arguments[0].click();", list2)
+        time.sleep(2)
+        Decline = driver.find_element(By.XPATH, '(//div[@role="menuitem"])[2]').click()
+        time.sleep(2)
+        txt = driver.find_element(By.XPATH, '//*[@aria-label="Additional notes from the admins (optional)"]').send_keys(
+            Declinetxt)
+        time.sleep(2)
+        DeclineConfirm = driver.find_element_by_xpath(
+            '/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[2]/div[2]/div/div').click()
+        #   time.sleep(2)
+        # driver.get("https://www.facebook.com/groups/428118924043465/pending_posts")
+ :
+    driver.quit()
